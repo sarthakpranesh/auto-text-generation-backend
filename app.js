@@ -40,7 +40,6 @@ app.get("/", async (req, res)=>{
             payload:{
                 prediction,
                 error: null,
-                wasPredictionRequired: true
             }
         })   
         val.dispose()             
@@ -51,7 +50,6 @@ app.get("/", async (req, res)=>{
             payload: {
                 prediction: null,
                 error: "Model not yet started, Please try later!",
-                wasPredictionRequired: true
             }
         })
     }
