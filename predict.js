@@ -16,6 +16,9 @@ const text_to_sequence = (text)=>{
 
 const pad_sequence = (text, maxLength, pre=0)=>{
     var padded = []
+    if(text.length>maxLength){
+        text = text.splice(text.length-maxLength, maxLength)
+    }
     var n = text.length
     for(var i = 0; i<maxLength-1; i++){
         padded.push(0)
