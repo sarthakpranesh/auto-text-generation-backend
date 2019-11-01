@@ -4,10 +4,12 @@ const tf = require("@tensorflow/tfjs-node")
 const path = require('path')
 const cors = require("cors")
 
+
+app.use(express.static('tfjs'));
 app.use(cors())
 
 //loading model
-const handler = tf.io.fileSystem(path.join(__dirname, "/tfjs/model.json"));
+const handler = tf.io.fileSystem(path.join(__dirname, "model.json"));
 var model;
 const loadModel = async ()=>{
     model = await tf.loadLayersModel(handler);
@@ -53,11 +55,6 @@ app.get("/", async (req, res)=>{
         })
     }
 })
-
-app.get("/model", (req, res)=>{
-    res.status(200).json(model)
-})
-
 
 const port = process.env.PORT || 8080
 
