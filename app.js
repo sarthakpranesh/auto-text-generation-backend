@@ -54,6 +54,11 @@ app.get("/", async (req, res)=>{
     }
 })
 
+app.get("/model", (req, res)=>{
+    res.status(200).send(model)
+})
+
+
 const port = process.env.PORT || 8080
 
 app.listen( port, ()=>{
