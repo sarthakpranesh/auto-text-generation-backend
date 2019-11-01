@@ -55,7 +55,7 @@ app.get("/", async (req, res)=>{
 })
 
 app.get("/model", (req, res)=>{
-    res.status(200).send(model)
+    res.status(200).json(model)
 })
 
 
